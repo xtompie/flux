@@ -1,0 +1,19 @@
+{
+    "authors": [
+        {
+            "email": "tomasz.pielczyk@gmail.com",
+            "name": "Tomasz Pielczyk"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Xtompie\\Flux\\": "src/"
+        }
+    },
+    "description": "Tool for managing events and logs. Collect, transform, stash with inputs, filters and outputs",
+    "keywords": ["logs", "logstash", "events"],
+    "license": "MIT",
+    "name": "xtompie/flux",
+    "require": {},
+    "type": "library"
+}
