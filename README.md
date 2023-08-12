@@ -1,7 +1,7 @@
 # flux
 
 Event and Log Management Tool.
-Data processing pipeline designed in PHP.
+Data processing pipeline created in PHP.
 Efficiently collect, parse, and transform logs.
 Highly customizable and extensible for your needs.
 
@@ -37,7 +37,7 @@ Highly customizable and extensible for your needs.
 ### Machine
 
 Entrypoint of flux is `Machine`.
-Machine have programs and finishs.
+Machine have programs and finishes.
 
 ### Program
 
@@ -54,15 +54,15 @@ See: [Start](https://github.com/xtompie/flux/blob/master/src/Core/Start.php)
 
 Next each input is called.
 Input generates a entry of type string.
-Each generated entry is individually nad immediately passed to filters.
-An example input can be an generator that generates an entry from each line of file.
+Each generated entry is individually and immediately passed to filters.
+An example input can be a generator that generates an entry from each line of file.
 See: [Input](https://github.com/xtompie/flux/blob/master/src/Core/Input.php)
 
 ### Filter
 
 Entry is passed into each filter.
 Filter can modify the entry.
-Filter can return null then the entry will not further processed
+Filter can return null then the entry will not be further processed.
 See: [Filter](https://github.com/xtompie/flux/blob/master/src/Core/Filter.php)
 
 ### Output
@@ -79,8 +79,8 @@ See: [Stop](https://github.com/xtompie/flux/blob/master/src/Core/Stop.php)
 
 ### Finish
 
-Machine have finishs.
-Finishs are called after the desired program/programs are executed.
+Machine have finishse.
+Finishes are called after the desired program/programs are executed.
 It is similar to stop but for machine.
 See: [Finish](https://github.com/xtompie/flux/blob/master/src/Core/Finish.php)
 
@@ -128,18 +128,19 @@ Programs can be run by:
 - `Machine->runAllPrograms()`
 - `Machine->runProgram(string $name)`
 - `Machine->run` - then machine reads shell arguments
-  - `runall`  - runs all program e.g. `php flux.php runall`
-  - `run <prgram-name>` - run prgoram by name  e.g.`php flux.php run default`
+  - `runall`  - runs all programs e.g. `php flux.php runall`
+  - `run <program-name>` - run prgoram by name  e.g.`php flux.php run default`
 
 ### SetUp and TearDown
 
-Starts, inputs, filters, outputs and stops can implment
+Starts, inputs, filters, outputs and stops can implement
 [SetUp](https://github.com/xtompie/flux/blob/master/src/Core/SetUp.php),
-[TearDown](https://github.com/xtompie/flux/blob/master/src/Core/TearDown.php),
+[TearDown](https://github.com/xtompie/flux/blob/master/src/Core/TearDown.php)
 interfaces.
 
 SetUp is used at the beginning of program startup before starts are called.
-TearDown is used na the end of program execution after each stop is called.
+
+TearDown is used at the end of program execution after each stop is called.
 
 ### Built-in components
 
