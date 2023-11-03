@@ -27,7 +27,7 @@ final class Machine
 
     public function runAllPrograms(): void
     {
-        $this->programs->runAll();
+        $this->programs->rejectPrivate()->runAll();
         $this->finishes->finish();
 
     }

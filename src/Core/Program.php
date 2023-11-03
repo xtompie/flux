@@ -15,6 +15,7 @@ class Program
         array|Filter $filter = [],
         array|Output $output = [],
         array|Stop $stop = [],
+        bool $private = false,
     ) {
         return new static(
             name: $name,
@@ -23,6 +24,7 @@ class Program
             filters: new FilterCollection(is_array($filter) ? $filter : [$filter]),
             outputs: new OutputCollection(is_array($output) ? $output : [$output]),
             stops: new StopCollection(is_array($stop) ? $stop : [$stop]),
+            private: $private,
         );
     }
 
@@ -33,6 +35,7 @@ class Program
         protected FilterCollection $filters,
         protected OutputCollection $outputs,
         protected StopCollection $stops,
+        protected bool $private,
     ) {
         if (preg_match('#[a-zA-Z0-9-_]+#', $name) !== 1) {
             throw new Exception("Invalid program name '$name'");
@@ -75,5 +78,10 @@ class Program
         }
         $this->stops->stop();
         $this->tearDown();
+    }
+
+    public function private(): bool
+    {
+        return $this->private;
     }
 }

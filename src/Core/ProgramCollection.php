@@ -37,6 +37,11 @@ class ProgramCollection
         $this->each(fn (Program $program) => $program->run());
     }
 
+    public function rejectPrivate(): static
+    {
+        return $this->filter(fn (Program $program) => !$program->private());
+    }
+
     public function run($name): void
     {
         $this
