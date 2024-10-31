@@ -73,9 +73,12 @@ class DiscordAggregateOutput implements Output, TearDown
                             'Content-Type: application/json',
                         ],
                         'method'  => 'POST',
-                        'content' => json_encode([
-                            'content' => $message,
-                        ]),
+                        'content' => json_encode(
+                            [
+                                'content' => $message,
+                            ],
+                            JSON_PARTIAL_OUTPUT_ON_ERROR
+                        ),
                     ],
                 ]
             )
