@@ -61,7 +61,7 @@ class DiscordAggregateOutput implements Output, TearDown
     protected function sendMessage(string $message): void
     {
         $message = $this->prefix . $message . $this->suffix;
-        $message = substr($message, 0, self::MAX_MESSAGE_LENGTH);
+        $message = mb_substr($message, 0, self::MAX_MESSAGE_LENGTH);
 
         file_get_contents(
             $this->webhook,
